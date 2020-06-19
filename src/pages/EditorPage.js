@@ -9,21 +9,22 @@ import {
   Row,
   Col,
   Radio,
+  Tooltip,
   Badge,
 } from "antd";
 import {
   QuestionCircleOutlined,
   BellOutlined,
   UserOutlined,
+  PlusOutlined,
   DownOutlined,
   ArrowLeftOutlined,
+  SelectOutlined,
+  MobileOutlined,
+  TabletOutlined,
+  LaptopOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-
-import { GoPlus } from "react-icons/go";
-import { MdComputer } from "react-icons/md";
-import { BsFileEarmarkCheck } from "react-icons/bs";
-import { AiOutlineMobile, AiOutlineTablet } from "react-icons/ai";
 
 function EditorPage() {
   return (
@@ -109,7 +110,9 @@ function EditorPage() {
                     <Select defaultValue="Home(/home)"></Select>
                   </Col>
                   <Col>
-                    <Button icon={<GoPlus />}>Add page</Button>
+                    <Tooltip>
+                      <Button icon={<PlusOutlined />}>Add page</Button>
+                    </Tooltip>
                   </Col>
                 </Row>
               }
@@ -125,30 +128,21 @@ function EditorPage() {
                   <Col sm={23} md={23} lg={23} xl={23}>
                     <Row justify="center">
                       <Radio.Group>
-                        <Radio.Button
-                          style={{ fontSize: 20, padding: 5 }}
-                          value="desktop"
-                        >
-                          <MdComputer />
+                        <Radio.Button value="desktop">
+                          <LaptopOutlined />
                         </Radio.Button>
-                        <Radio.Button
-                          style={{ fontSize: 20, padding: 5 }}
-                          value="tab"
-                        >
-                          <AiOutlineTablet />
+                        <Radio.Button value="tab">
+                          <TabletOutlined />{" "}
                         </Radio.Button>
-                        <Radio.Button
-                          style={{ fontSize: 20, padding: 5 }}
-                          value="mobile"
-                        >
-                          <AiOutlineMobile />
+                        <Radio.Button value="mobile">
+                          <MobileOutlined />
                         </Radio.Button>
                       </Radio.Group>
                     </Row>
                   </Col>
                   <Col sm={1} md={1} lg={1} xl={1}>
                     <Row>
-                      <Button icon={<BsFileEarmarkCheck />}></Button>
+                      <Button icon={<SelectOutlined />}></Button>
                     </Row>
                   </Col>
                 </Row>

@@ -14,14 +14,12 @@ import {
 } from "antd";
 import {
   QuestionCircleOutlined,
+  PlusOutlined,
   BellOutlined,
   UserOutlined,
   DownOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import { GoPlus } from "react-icons/go";
-import "../App.css";
-import ProjectPage from "./ProjectPage";
 function Projects() {
   return (
     <div>
@@ -63,16 +61,10 @@ function Projects() {
                   ></Button>
                 </Col>
                 <Col>
-                  <Button
-                    type="text"
-                    icon={
-                      <Avatar
-                        src="https://picsum.photos/200"
-                        style={{ margin: "0 4px" }}
-                      />
-                      // <DownOutlined style={{ fontSize: 10 }} />
-                    }
-                  ></Button>
+                  <Button type="text">
+                    <Avatar src="https://picsum.photos/200" />
+                    <DownOutlined style={{ fontSize: 10 }} />
+                  </Button>
                 </Col>
               </Row>
             </Col>
@@ -88,7 +80,7 @@ function Projects() {
           <Row gutter={[5, 5]} type="flex">
             <Col xs={24} sm={12} md={8} lg={6} xl={5}>
               <Button
-                icon={<GoPlus />}
+                icon={<PlusOutlined />}
                 style={{ width: "100%", height: "100%" }}
               ></Button>
             </Col>
@@ -115,8 +107,8 @@ function Projects() {
                 headStyle={{ fontWeight: "bold" }}
                 extra={
                   <BrowserRouter>
-                  <NavLink to="/projectpage">
-                    <Button type="link">Settings</Button>
+                    <NavLink to="/projectpage">
+                      <Button type="link">Settings</Button>
                     </NavLink>
                   </BrowserRouter>
                 }

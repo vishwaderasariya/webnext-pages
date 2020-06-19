@@ -21,7 +21,6 @@ import {
   DownOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import "../App.css";
 import Content from "../Components/Content";
 
 const TabBarContent = ({ children }) => {
@@ -103,20 +102,6 @@ const ProjectPage = () => {
               </Row>
             </Col>
           </Row>
-          {/* <Tabs
-            defaultActiveKey="1"
-            style={{ margin: 0 }}
-            tabBarExtraContent={<Button type="primary">Editor</Button>}
-          >
-            <Tabs.TabPane tab="General" key="1"></Tabs.TabPane>
-            <Tabs.TabPane tab="SEO" key="2"></Tabs.TabPane>
-            <Tabs.TabPane tab="Analytics" key="3"></Tabs.TabPane>
-            <Tabs.TabPane tab="Plugins" key="4"></Tabs.TabPane>
-            <Tabs.TabPane tab="Content" key="5"></Tabs.TabPane>
-            <Tabs.TabPane tab="Assests" key="6"></Tabs.TabPane>
-            <Tabs.TabPane tab="Access" key="7"></Tabs.TabPane>
-            <Tabs.TabPane tab="Settings" key="8"></Tabs.TabPane>
-          </Tabs> */}
         </Layout.Header>
         <Layout.Content>
           <Tabs
