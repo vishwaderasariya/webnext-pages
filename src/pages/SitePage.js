@@ -1,23 +1,12 @@
 import React from "react";
-import {
-  Select,
-  Button,
-  Tabs,
-  Card,
-  Row,
-  Col,
-  Layout,
-  Badge,
-  Avatar,
-  Space,
-  Divider,
-} from "antd";
+import { Select, Button, Tabs, Row, Col, Layout, Badge } from "antd";
+import Avatar from "../Components/Avatar";
+
 import { NavLink, BrowserRouter } from "react-router-dom";
 
 import {
   QuestionCircleOutlined,
   BellOutlined,
-  UserOutlined,
   DownOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
@@ -33,7 +22,7 @@ const TabBarContent = ({ children }) => {
   );
 };
 
-const ProjectPage = () => {
+const SitePage = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
       <Layout>
@@ -50,6 +39,7 @@ const ProjectPage = () => {
                 <Col>
                   <img
                     src="https://picsum.photos/200"
+                    alt="Logo"
                     style={{ width: 82, height: 30, marginBottom: "4px" }}
                   ></img>
                 </Col>
@@ -95,7 +85,7 @@ const ProjectPage = () => {
                 </Col>
                 <Col>
                   <Button type="text">
-                    <Avatar src="https://picsum.photos/200" />
+                    <Avatar src="https://picsum.photos/200" size={30} />
                     <DownOutlined style={{ fontSize: 10 }} />
                   </Button>
                 </Col>
@@ -115,7 +105,20 @@ const ProjectPage = () => {
             <Tabs.TabPane tab="SEO" key="2"></Tabs.TabPane>
             <Tabs.TabPane tab="Analytics" key="3"></Tabs.TabPane>
             <Tabs.TabPane tab="Plugins" key="4"></Tabs.TabPane>
-            <Tabs.TabPane tab="Content" key="5">
+            <Tabs.TabPane
+              tab={
+                <BrowserRouter>
+                  <NavLink
+                    to="/content"
+                    style={{ color: "#595959" }}
+                    activeClassName="active"
+                  >
+                    Content
+                  </NavLink>
+                </BrowserRouter>
+              }
+              key="5"
+            >
               <TabBarContent>
                 <Content />
               </TabBarContent>
@@ -130,4 +133,4 @@ const ProjectPage = () => {
   );
 };
 
-export default ProjectPage;
+export default SitePage;

@@ -1,21 +1,11 @@
 import React from "react";
-import {
-  Layout,
-  Select,
-  Button,
-  Card,
-  Space,
-  Avatar,
-  Row,
-  Col,
-  Radio,
-  Tooltip,
-  Badge,
-} from "antd";
+import { Layout, Select, Button, Row, Col, Radio, Badge } from "antd";
+import { BrowserRouter, NavLink } from "react-router-dom";
+
+import Avatar from "../Components/Avatar";
 import {
   QuestionCircleOutlined,
   BellOutlined,
-  UserOutlined,
   PlusOutlined,
   DownOutlined,
   ArrowLeftOutlined,
@@ -24,6 +14,7 @@ import {
   TabletOutlined,
   LaptopOutlined,
 } from "@ant-design/icons";
+import Card from "../Components/Card";
 import "antd/dist/antd.css";
 
 function EditorPage() {
@@ -62,11 +53,31 @@ function EditorPage() {
                   </Select>
                 </Col>
                 <Col>
-                  <Radio.Group buttonStyle="solid">
-                    <Radio.Button value="pages">Pages</Radio.Button>
-                    <Radio.Button value="components">Components</Radio.Button>
-                    <Radio.Button value="theme">Theme</Radio.Button>
-                    <Radio.Button value="integration">Integration</Radio.Button>
+                  <Radio.Group buttonStyle="solid" defaultValue="pages">
+                    <BrowserRouter>
+                      <NavLink to="/editor/pages">
+                        <Radio.Button value="pages">Pages</Radio.Button>
+                      </NavLink>
+                    </BrowserRouter>
+                    <BrowserRouter>
+                      <NavLink to="/editor/components">
+                        <Radio.Button value="components">
+                          Components
+                        </Radio.Button>
+                      </NavLink>
+                    </BrowserRouter>
+                    <BrowserRouter>
+                      <NavLink to="/editor/theme">
+                        <Radio.Button value="theme">Theme</Radio.Button>
+                      </NavLink>
+                    </BrowserRouter>
+                    <BrowserRouter>
+                      <NavLink to="/editor/integration">
+                        <Radio.Button value="integration">
+                          Integration
+                        </Radio.Button>
+                      </NavLink>
+                    </BrowserRouter>
                   </Radio.Group>
                 </Col>
               </Row>
@@ -91,7 +102,7 @@ function EditorPage() {
                 </Col>
                 <Col>
                   <Button type="text">
-                    <Avatar src="https://picsum.photos/200" />
+                    <Avatar src="https://picsum.photos/200" size={30} />
                     <DownOutlined style={{ fontSize: 10 }} />
                   </Button>
                 </Col>
@@ -110,9 +121,7 @@ function EditorPage() {
                     <Select defaultValue="Home(/home)"></Select>
                   </Col>
                   <Col>
-                    <Tooltip>
-                      <Button icon={<PlusOutlined />}>Add page</Button>
-                    </Tooltip>
+                    <Button icon={<PlusOutlined />}>Add page</Button>
                   </Col>
                 </Row>
               }
@@ -128,15 +137,27 @@ function EditorPage() {
                   <Col sm={23} md={23} lg={23} xl={23}>
                     <Row justify="center">
                       <Radio.Group>
-                        <Radio.Button value="desktop">
-                          <LaptopOutlined />
-                        </Radio.Button>
-                        <Radio.Button value="tab">
-                          <TabletOutlined />{" "}
-                        </Radio.Button>
-                        <Radio.Button value="mobile">
-                          <MobileOutlined />
-                        </Radio.Button>
+                        <BrowserRouter>
+                          <NavLink to="/editor/pages/desktopview">
+                            <Radio.Button value="desktop">
+                              <LaptopOutlined />
+                            </Radio.Button>
+                          </NavLink>
+                        </BrowserRouter>
+                        <BrowserRouter>
+                          <NavLink to="/editor/pages/tabletview">
+                            <Radio.Button value="tab">
+                              <TabletOutlined />{" "}
+                            </Radio.Button>
+                          </NavLink>
+                        </BrowserRouter>
+                        <BrowserRouter>
+                          <NavLink to="editor/pages/mobileview">
+                            <Radio.Button value="mobile">
+                              <MobileOutlined />
+                            </Radio.Button>
+                          </NavLink>
+                        </BrowserRouter>
                       </Radio.Group>
                     </Row>
                   </Col>

@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, BrowserRouter } from "react-router-dom";
-import {
-  Card,
-  Space,
-  Button,
-  Layout,
-  Typography,
-  Row,
-  Col,
-  Anchor,
-  Avatar,
-  Badge,
-} from "antd";
+import { Space, Button, Layout, Typography, Row, Col, Badge } from "antd";
+import Avatar from "../Components/Avatar";
+import Card from "../Components/Card";
 import {
   QuestionCircleOutlined,
   PlusOutlined,
   BellOutlined,
-  UserOutlined,
   DownOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-function Projects() {
+function Sites() {
   return (
     <div>
       <Layout>
@@ -46,7 +36,7 @@ function Projects() {
               <Row gutter={8} align="middle">
                 <Col>
                   <Button
-                    icon={<QuestionCircleOutlined style={{ fontSize: 20 }} />}
+                    icon={<QuestionCircleOutlined />}
                     type="text"
                   ></Button>
                 </Col>
@@ -54,7 +44,7 @@ function Projects() {
                   <Button
                     icon={
                       <Badge count={22}>
-                        <BellOutlined style={{ fontSize: 20 }} />
+                        <BellOutlined />
                       </Badge>
                     }
                     type="text"
@@ -62,8 +52,8 @@ function Projects() {
                 </Col>
                 <Col>
                   <Button type="text">
-                    <Avatar src="https://picsum.photos/200" />
-                    <DownOutlined style={{ fontSize: 10 }} />
+                    <Avatar src="https://picsum.photos/200" size={30} />
+                    <DownOutlined />
                   </Button>
                 </Col>
               </Row>
@@ -107,7 +97,7 @@ function Projects() {
                 headStyle={{ fontWeight: "bold" }}
                 extra={
                   <BrowserRouter>
-                    <NavLink to="/projectpage">
+                    <NavLink to="/sitepage">
                       <Button type="link">Settings</Button>
                     </NavLink>
                   </BrowserRouter>
@@ -131,4 +121,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Sites;
