@@ -1,5 +1,13 @@
 import React from "react";
-import { Select, Button, Tabs, Row, Col, Layout, Badge } from "antd";
+import {
+  Select,
+  Button,
+  Tabs,
+  Row,
+  Col,
+  Layout,
+  Badge,
+} from "antd";
 import Avatar from "../Components/Avatar";
 
 import { NavLink, BrowserRouter } from "react-router-dom";
@@ -57,11 +65,9 @@ const SitePage = () => {
                   </Select>
                 </Col>
                 <Col>
-                  <BrowserRouter>
-                    <NavLink to="/editorpage">
-                      <Button>Editor</Button>
-                    </NavLink>
-                  </BrowserRouter>
+                  <NavLink to="/editorpage">
+                    <Button>Editor</Button>
+                  </NavLink>
                 </Col>
               </Row>
             </Col>
@@ -105,24 +111,17 @@ const SitePage = () => {
             <Tabs.TabPane tab="SEO" key="2"></Tabs.TabPane>
             <Tabs.TabPane tab="Analytics" key="3"></Tabs.TabPane>
             <Tabs.TabPane tab="Plugins" key="4"></Tabs.TabPane>
-            <Tabs.TabPane
-              tab={
-                <BrowserRouter>
-                  <NavLink
-                    to="/content"
-                    style={{ color: "#595959" }}
-                    activeClassName="active"
-                  >
-                    Content
-                  </NavLink>
-                </BrowserRouter>
-              }
-              key="5"
-            >
-              <TabBarContent>
-                <Content />
-              </TabBarContent>
+
+            <Tabs.TabPane tab="Content" key="5">
+              <BrowserRouter>
+                <NavLink to="/content">
+                  <TabBarContent>
+                    <Content />
+                  </TabBarContent>
+                </NavLink>
+              </BrowserRouter>
             </Tabs.TabPane>
+
             <Tabs.TabPane tab="Assests" key="6"></Tabs.TabPane>
             <Tabs.TabPane tab="Access" key="7"></Tabs.TabPane>
             <Tabs.TabPane tab="Settings" key="8"></Tabs.TabPane>

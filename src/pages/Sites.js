@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, BrowserRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Space, Button, Layout, Typography, Row, Col, Badge } from "antd";
 import Avatar from "../Components/Avatar";
 import Card from "../Components/Card";
@@ -96,11 +96,9 @@ function Sites() {
                 title="Logicwind.com"
                 headStyle={{ fontWeight: "bold" }}
                 extra={
-                  <BrowserRouter>
-                    <NavLink to="/sitepage">
-                      <Button type="link">Settings</Button>
-                    </NavLink>
-                  </BrowserRouter>
+                  <NavLink to="/sitepage">
+                    <Button type="link">Settings</Button>
+                  </NavLink>
                 }
                 style={{
                   border: "1px solid #DCDCDC",

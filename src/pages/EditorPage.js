@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout, Select, Button, Row, Col, Radio, Badge } from "antd";
 import { BrowserRouter, NavLink } from "react-router-dom";
 
@@ -18,6 +18,9 @@ import Card from "../Components/Card";
 import "antd/dist/antd.css";
 
 function EditorPage() {
+  const [active, setactive] = useState("");
+  console.log(active);
+
   return (
     <div style={{ minHeight: "100vh" }}>
       <Layout>
@@ -79,6 +82,24 @@ function EditorPage() {
                       </NavLink>
                     </BrowserRouter>
                   </Radio.Group>
+                  {/* <BrowserRouter>
+                    <NavLink to="/editor/{active}">
+                      <Radio.Group
+                        buttonStyle="solid"
+                        defaultValue="pages"
+                        onChange={(event) => setactive(event.target.value)}
+                      >
+                        <Radio.Button value="pages">Pages</Radio.Button>
+                        <Radio.Button value="components">
+                          Components
+                        </Radio.Button>
+                        <Radio.Button value="theme">Theme</Radio.Button>
+                        <Radio.Button value="integration">
+                          Integration
+                        </Radio.Button>
+                      </Radio.Group>
+                    </NavLink>
+                  </BrowserRouter> */}
                 </Col>
               </Row>
             </Col>

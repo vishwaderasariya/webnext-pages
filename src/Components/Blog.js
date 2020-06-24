@@ -1,9 +1,7 @@
 import React from "react";
-import { Typography, Row, Col, Tag } from "antd";
+import { Typography, Row, Col } from "antd";
 import Card from "../Components/Card";
-import Avatar from "./Avatar";
 
-import { MoreOutlined } from "@ant-design/icons";
 
 import BlogDetails from "./BlogDetails";
 

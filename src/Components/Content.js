@@ -1,6 +1,7 @@
 import React from "react";
-import { NavLink, BrowserRouter } from "react-router-dom";
-import { Tabs } from "antd";
+import { NavLink } from "react-router-dom";
+import { Tabs, Space } from "antd";
+import "../App.css";
 import {
   MailOutlined,
   SettingOutlined,
@@ -17,65 +18,65 @@ function Content() {
     <Tabs Key="1" tabPosition="left">
       <Tabs.TabPane
         tab={
-          <BrowserRouter>
-            <NavLink to="content/blog" style={{ color: "#595959" }}>
-              <UserOutlined /> Blogs
-            </NavLink>
-          </BrowserRouter>
+          <Space>
+            <UserOutlined /> Blogs
+          </Space>
         }
         key="1"
       >
-        <Blog />
+        <NavLink to="/content/blog">
+          <Blog />
+        </NavLink>
       </Tabs.TabPane>
 
       <Tabs.TabPane
         tab={
-          <BrowserRouter>
-            <NavLink to="/content/forms" style={{ color: "#595959" }}>
-              <SettingOutlined /> Forms
-            </NavLink>
-          </BrowserRouter>
+          <Space>
+            <SettingOutlined /> Forms
+          </Space>
         }
         key="2"
       >
-        <Forms></Forms>
+        <NavLink to="/content/forms">
+          <Forms />
+        </NavLink>
       </Tabs.TabPane>
       <Tabs.TabPane
         tab={
-          <BrowserRouter>
-            <NavLink to="/content/survey" style={{ color: "#595959" }}>
-              <BulbOutlined /> Survey
-            </NavLink>
-          </BrowserRouter>
+          <Space>
+            <BulbOutlined /> Survey
+          </Space>
         }
         key="3"
       >
-        <Survey />
+        <NavLink to="/content/survey">
+          <Survey />
+        </NavLink>
       </Tabs.TabPane>
       <Tabs.TabPane
         tab={
-          <BrowserRouter>
-            <NavLink to="content/subscription" style={{ color: "#595959" }}>
-              <MailOutlined /> Subscriptions
-            </NavLink>
-          </BrowserRouter>
+          <Space>
+            <MailOutlined /> Subscriptions
+          </Space>
         }
         key="4"
       >
-        <Subscriptions />
+        <NavLink to="content/subscription">
+          <Subscriptions />
+        </NavLink>
       </Tabs.TabPane>
       <Tabs.TabPane
         tab={
-          <BrowserRouter>
-            <NavLink to="/content/images" style={{ color: "#595959" }}>
-              <SettingOutlined />
-              Images
-            </NavLink>
-          </BrowserRouter>
+          <Space>
+            <SettingOutlined />
+            Images
+          </Space>
         }
         key="5"
       >
-        <Images />
+        <NavLink to="/content/images">
+          <Images />
+        </NavLink>
       </Tabs.TabPane>
     </Tabs>
   );
